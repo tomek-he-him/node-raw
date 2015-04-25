@@ -42,20 +42,33 @@ $ npm install node-raw
 Usage
 -----
 
-1) Polyfill require.
+
+1) Shim `require`.
 
 ```js
-if (typeof window === 'undefined') require = require('node-raw')(require);
+const isomorphicRequire = require('node-raw')(require);
 ```
+
 
 2) Profit!
 
 ```js
 // Require modules as you did normally.
-var Rx = require('rx');
+const Rx = isomorphicRequire('rx');
 
 // Require text files with *raw-loader*. That’ll now work in node as well!
-var readme = require('raw!Readme.md');
+const readme = isomorphicRequire('raw!Readme.md');
+```
+
+
+3) Hot tip:
+
+This works well with [*node-ensure*](https://github.com/bauerca/node-ensure):
+
+```js
+if (!isomorphicRequire.ensure) {
+  isomorphicRequire.ensure = require('node-ensure');
+}
 ```
 
 
