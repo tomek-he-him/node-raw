@@ -51,7 +51,7 @@ const isomorphicRequire = require('node-raw')(require);
 const Rx = isomorphicRequire('rx');
 
 // Require text files with *raw-loader*. That’ll now work in node as well!
-const readme = isomorphicRequire('raw!Readme.md');
+const readme = isomorphicRequire('raw!./Readme.md');
 ```
 
 
