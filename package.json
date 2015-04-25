@@ -6,9 +6,10 @@
   {}
 
 , "scripts":
-  { "develop": "nodangel --ignore node_modules --exec 'npm test'"
+  { "develop": "nodangel --ignore node_modules --exec 'npm run test:lite'"
   , "prepublish": "cd module; babel *.js --out-dir .."
-  , "test": "jshint && babel-node test.js | tap-spec"
+  , "test": "jshint && npm run test:lite"
+  , "test:lite": "babel-node test.js | tap-spec"
   }
 
 , "devDependencies":
