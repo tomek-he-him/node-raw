@@ -7,7 +7,7 @@
 
 , "scripts":
   { "develop": "nodangel --ignore node_modules --exec 'npm test'"
-  , "prepublish": "babel module/*.js --out-dir ."
+  , "prepublish": "cd module; babel *.js --out-dir .."
   , "test": "jshint && babel-node test.js | tap-spec"
   }
 
