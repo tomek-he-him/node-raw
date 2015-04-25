@@ -1,22 +1,23 @@
-{ "name": "…"
+{ "name": "node-raw"
 , "version": "0.0.0-work-in-progress"
-, "description": "…"
+, "description": "Make webpack’s raw-loader work in node and iojs."
 
 , "dependencies":
   {}
 
 , "scripts":
   { "develop": "nodangel --ignore node_modules --exec 'npm test'"
-  , "prepublish": "gulp build"
+  , "prepublish": "babel module/*.js --out-dir ."
   , "test": "jshint && babel-node test.js | tap-spec"
   }
 
 , "devDependencies":
-  { "?": "Run `npm install babel jshint nodangel tap-spec@2` and save it here"
+  { "babel": "5.1.13"
+  , "jshint": "2.7.0"
+  , "nodangel": "1.3.8"
+  , "tap-spec": "2.2.2"
 
-  , "?": "Run `npm install del gulp gulp-babel gulp-help` and save it here"
-
-  , "?": "Run `npm install tape-catch` and save it here"
+  , "tape-catch": "1.0.4"
   }
 
 , "files":
@@ -29,11 +30,17 @@
 
 , "license": "MIT"
 , "keywords":
-  [ "…"
+  [ "webpack"
+  , "isomorphic"
+  , "loader"
+  , "raw"
+  , "binding"
+  , "fs"
+  , "node"
   ]
 , "author": "Tomek Wiszniewski <t.wiszniewski@gmail.com>"
 , "repository":
   { "type": "git"
-  , "url": "git@github.com:tomekwi/….git"
+  , "url": "git@github.com:tomekwi/node-raw.git"
   }
 }
