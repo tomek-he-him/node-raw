@@ -1,25 +1,15 @@
 /* jslint evil: true */
 
 const rawPrefix = /^raw!/;
-const moduleFile = /^(?![.\/])/;
-const noTrailingSlash = /(?!\/)$/;
 const root = new Function('return this')();
 
-const getModulesPath = (packageRoot) => (packageRoot ?
-  (('' + packageRoot).replace(noTrailingSlash, '/') +
-    'node_modules/'
-  ) :
-  ''
-);
-
-export default (nativeRequire, settings = {}) => {
+export default (nativeRequire) => {
   // If in the browser, just return webpack’s `require`.
   if (root.window === root) return nativeRequire;
 
   // Else wrap `require` with the following function:
   else {
     const {readFileSync} = nativeRequire('fs');
-    const modulesPath = getModulesPath(settings.packageRoot);
 
     return (moduleId) => (rawPrefix.test(moduleId) ?
 
@@ -27,8 +17,7 @@ export default (nativeRequire, settings = {}) => {
       // succeeding file path.
       readFileSync(
         moduleId
-          .replace(rawPrefix, '')
-          .replace(moduleFile, modulesPath),
+          .replace(rawPrefix, ''),
         {encoding: 'utf8'}
       ) :
 

@@ -40,7 +40,7 @@ test('Doesn’t break the native `require`.', (is) => {
 });
 
 test('Loads raw text files.', (is) => {
-  const isomorphicRequire = nodeRaw(require, {packageRoot: __dirname});
+  const isomorphicRequire = nodeRaw(require);
 
   is.equal(
     isomorphicRequire('raw!./test/fixtures/itWorks.txt'),
@@ -48,11 +48,12 @@ test('Loads raw text files.', (is) => {
     'from local files'
   );
 
-  is.equal(
-    isomorphicRequire('raw!babel/README.md'),
-    readFileSync('../node_modules/babel/README.md'),
-    'from module files'
-  );
+  // // See “caveats” in the readme.
+  // is.equal(
+  //   isomorphicRequire('raw!babel/README.md'),
+  //   readFileSync('../node_modules/babel/README.md'),
+  //   'from module files'
+  // );
 
   is.end();
 });
