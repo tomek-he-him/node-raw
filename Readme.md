@@ -9,10 +9,6 @@
 [![Code style: airbnb
 ](https://img.shields.io/badge/code%20style-airbnb-blue.svg?style=flat-square)
 ](https://github.com/airbnb/javascript)
- 
-[![Stability: experimental
-](https://img.shields.io/badge/stability-experimental-red.svg?style=flat-square)
-](https://nodejs.org/api/documentation.html#documentation_stability_index)
 
 
 
@@ -20,11 +16,9 @@
 node-raw
 ========
 
-**Make webpack’s *raw-loader* work in *node* and *iojs*.**
+**Make webpack’s *[raw-loader][]* work in *node* and *iojs*.**
 
-*Heads up!* This is totally a work in progress. [Thoughts and ideas][] are very welcome.
-
-[Thoughts and ideas]:  https://github.com/tomekwi/node-raw/issues
+[raw-loader]:  https://github.com/webpack/raw-loader  "webpack/raw-loader"
 
 
 
@@ -61,15 +55,24 @@ const readme = isomorphicRequire('raw!Readme.md');
 ```
 
 
-3) Hot tip:
+3) Hot tip!
 
-This works well with [*node-ensure*](https://github.com/bauerca/node-ensure):
+This works well with *[node-ensure][]*:
 
 ```js
 if (!isomorphicRequire.ensure) {
   isomorphicRequire.ensure = require('node-ensure');
 }
 ```
+
+[node-ensure]:  https://github.com/bauerca/node-ensure  "bauerca/node-ensure"
+
+
+
+Caveats
+-------
+
+I’m having some weird problems with requiring files directly from `node_modules` (like in `isomorphicRequire('raw!node-raw/Readme.md)`). For relative files everything works like a charm and can be considered stable.
 
 
 
