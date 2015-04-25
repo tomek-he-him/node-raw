@@ -1,0 +1,39 @@
+{ "name": "…"
+, "version": "0.0.0-work-in-progress"
+, "description": "…"
+
+, "dependencies":
+  {}
+
+, "scripts":
+  { "develop": "nodangel --ignore node_modules --exec 'npm test'"
+  , "prepublish": "gulp build"
+  , "test": "jshint && babel-node test.js | tap-spec"
+  }
+
+, "devDependencies":
+  { "?": "Run `npm install babel jshint nodangel tap-spec@2` and save it here"
+
+  , "?": "Run `npm install del gulp gulp-babel gulp-help` and save it here"
+
+  , "?": "Run `npm install tape-catch` and save it here"
+  }
+
+, "files":
+  [ "/!(gulpfile).js"
+  , "/module/"
+  , "/test/"
+  , "/Readme.md"
+  , "/License.md"
+  ]
+
+, "license": "MIT"
+, "keywords":
+  [ "…"
+  ]
+, "author": "Tomek Wiszniewski <t.wiszniewski@gmail.com>"
+, "repository":
+  { "type": "git"
+  , "url": "git@github.com:tomekwi/….git"
+  }
+}
