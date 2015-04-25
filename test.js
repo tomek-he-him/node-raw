@@ -40,7 +40,7 @@ test('Doesn’t break the native `require`.', (is) => {
 });
 
 test('Loads raw text files.', (is) => {
-  const isomorphicRequire = nodeRaw(require);
+  const isomorphicRequire = nodeRaw(require, {packageRoot: __dirname});
 
   is.equal(
     isomorphicRequire('raw!./test/fixtures/itWorks.txt'),
