@@ -41,7 +41,7 @@ Usage
 1) Shim `require`.
 
 ```js
-const isomorphicRequire = require('node-raw')(require);
+const grab = require('node-raw')(require);
 ```
 
 
@@ -49,10 +49,10 @@ const isomorphicRequire = require('node-raw')(require);
 
 ```js
 // Require modules as you did normally.
-const Rx = isomorphicRequire('rx');
+const Rx = grab('rx');
 
 // Require text files with *raw-loader*. That’ll now work in node as well!
-const readme = isomorphicRequire('raw!./Readme.md');
+const readme = grab('raw!./Readme.md');
 ```
 
 
@@ -61,8 +61,8 @@ const readme = isomorphicRequire('raw!./Readme.md');
 This works well with *[node-ensure][]*:
 
 ```js
-if (!isomorphicRequire.ensure) {
-  isomorphicRequire.ensure = require('node-ensure');
+if (!grab.ensure) {
+  grab.ensure = require('node-ensure');
 }
 ```
 
@@ -73,7 +73,7 @@ if (!isomorphicRequire.ensure) {
 Caveats
 -------
 
-I’m having some weird problems with requiring files directly from `node_modules` (like in `isomorphicRequire('raw!node-raw/Readme.md)`). For relative files everything works like a charm and can be considered stable.
+I’m having some weird problems with requiring files directly from `node_modules` (like in `grab('raw!node-raw/Readme.md)`). For relative files everything works like a charm and can be considered stable.
 
 
 

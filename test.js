@@ -5,34 +5,34 @@ import test from 'tape-catch';
 import nodeRaw from './module/index';
 
 test('Doesn’t break the native `require`.', (is) => {
-  const isomorphicRequire = nodeRaw(require);
+  const grab = nodeRaw(require);
 
   is.equal(
-    isomorphicRequire('./test/fixtures/itWorks'),
+    grab('./test/fixtures/itWorks'),
     'It works!',
     'for local files without an extension'
   );
 
   is.equal(
-    isomorphicRequire('./test/fixtures/itReallyWorks.js'),
+    grab('./test/fixtures/itReallyWorks.js'),
     'It really works!',
     'for local files with an extension'
   );
 
   is.equal(
-    isomorphicRequire('./test/fixtures/itWorks!Absolutely.js'),
+    grab('./test/fixtures/itWorks!Absolutely.js'),
     'It works! Absolutely!',
     'for local files with an exclamation mark in the filename'
   );
 
   is.equal(
-    isomorphicRequire('tape-catch'),
+    grab('tape-catch'),
     test,
     'for modules'
   );
 
   is.equal(
-    isomorphicRequire('tape-catch/index.js'),
+    grab('tape-catch/index.js'),
     test,
     'for files in modules'
   );
@@ -41,17 +41,17 @@ test('Doesn’t break the native `require`.', (is) => {
 });
 
 test('Loads raw text files.', (is) => {
-  const isomorphicRequire = nodeRaw(require);
+  const grab = nodeRaw(require);
 
   is.equal(
-    isomorphicRequire('raw!./test/fixtures/itWorks.txt'),
+    grab('raw!./test/fixtures/itWorks.txt'),
     'It works with raw text files!\n',
     'from local files'
   );
 
   // // See “caveats” in the readme.
   // is.equal(
-  //   isomorphicRequire('raw!babel/README.md'),
+  //   grab('raw!babel/README.md'),
   //   readFileSync('../node_modules/babel/README.md'),
   //   'from module files'
   // );
