@@ -61,9 +61,7 @@ const readme = grab('raw!./Readme.md');
 This works well with *[node-ensure][]*:
 
 ```js
-if (!grab.ensure) {
-  grab.ensure = require('node-ensure');
-}
+if (!grab.ensure) grab.ensure = require('node-ensure');
 ```
 
 [node-ensure]:  https://github.com/bauerca/node-ensure  "bauerca/node-ensure"
