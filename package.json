@@ -6,7 +6,8 @@
   {}
 
 , "scripts":
-  { "develop": "nodangel --ignore node_modules --exec 'npm run test:lite'"
+  { "coverage": "isparta cover test.js"
+  , "develop": "nodangel --ignore node_modules --exec 'npm run test:lite'"
   , "prepublish": "cd module; babel *.js --out-dir .."
   , "test": "jshint && npm run test:lite"
   , "test:lite": "babel-node test.js | tap-spec"
@@ -14,6 +15,7 @@
 
 , "devDependencies":
   { "babel": "5.1.13"
+  , "isparta": "3.0.3"
   , "jshint": "2.7.0"
   , "nodangel": "1.3.8"
   , "tap-spec": "2.2.2"
