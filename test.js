@@ -1,5 +1,6 @@
+import path from 'path';
+
 import test from 'tape-catch';
-import {readFileSync} from 'fs';
 
 import nodeRaw from './module/index';
 
@@ -55,5 +56,25 @@ test('Loads raw text files.', (is) => {
   //   'from module files'
   // );
 
+  is.end();
+});
+
+test('Uses webpack’s `require` in the browser environment.', (is) => {
+  // Spoof *node-raw* that we’re in a browser.
+  const originalWindow = global.window;
+  global.window = global;
+
+  // Delete the `require` cache so that the module reloads.
+  delete require.cache[path.join(__dirname, 'module', 'index.js')];
+  let nodeRaw = require('./module/index');
+
+  is.equal(
+    nodeRaw(require),
+    require,
+    'returns `require` when in a browser (`window` equals global object)'
+  );
+
+  // Set things back to normal.
+  global.window = originalWindow;
   is.end();
 });
