@@ -1,12 +1,13 @@
-[![Travis – build status
+[![Coveralls – test coverage
+](https://img.shields.io/coveralls/tomekwi/node-raw.svg?style=flat-square)
+](https://coveralls.io/r/tomekwi/node-raw)
+ [![Travis – build status
 ](https://img.shields.io/travis/tomekwi/node-raw/master.svg?style=flat-square)
 ](https://travis-ci.org/tomekwi/node-raw)
- 
-[![David – status of dependencies
+ [![David – status of dependencies
 ](https://img.shields.io/david/tomekwi/node-raw.svg?style=flat-square)
 ](https://david-dm.org/tomekwi/node-raw)
- 
-[![Code style: airbnb
+ [![Code style: airbnb
 ](https://img.shields.io/badge/code%20style-airbnb-blue.svg?style=flat-square)
 ](https://github.com/airbnb/javascript)
 
