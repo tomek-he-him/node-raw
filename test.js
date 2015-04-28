@@ -5,7 +5,7 @@ import test from 'tape-catch';
 import nodeRaw from './module/index';
 
 test('Doesn’t break the native `require`.', (is) => {
-  const grab = nodeRaw(require);
+  const grab = nodeRaw(require, {dirname: __dirname});
 
   is.equal(
     grab('./test/fixtures/itWorks'),
@@ -41,7 +41,7 @@ test('Doesn’t break the native `require`.', (is) => {
 });
 
 test('Loads raw text files.', (is) => {
-  const grab = nodeRaw(require);
+  const grab = nodeRaw(require, {dirname: __dirname});
 
   is.equal(
     grab('raw!./test/fixtures/itWorks.txt'),
@@ -69,7 +69,7 @@ test('Uses webpack’s `require` in the browser environment.', (is) => {
   let nodeRaw = require('./module/index');
 
   is.equal(
-    nodeRaw(require),
+    nodeRaw(require, {dirname: __dirname}),
     require,
     'returns `require` when in a browser (`window` equals global object)'
   );
