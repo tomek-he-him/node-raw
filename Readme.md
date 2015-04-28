@@ -19,6 +19,8 @@ node-raw
 
 **Make webpack’s *[raw-loader][]* work in *node* and *iojs*.**
 
+And that almost for free. The whole thing weighs around 300 bytes minified and gzipped.
+
 [raw-loader]:  https://github.com/webpack/raw-loader  "webpack/raw-loader"
 
 
