@@ -43,7 +43,7 @@ Usage
 1) Shim `require`.
 
 ```js
-const grab = require('node-raw')(require);
+const grab = require('node-raw')(require, {dirname: __dirname});
 ```
 
 
