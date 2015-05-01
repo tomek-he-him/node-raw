@@ -1,3 +1,11 @@
+
+**⚠ Heads up!** This module has been renamed. [isomorphic-raw](../isomorphic-raw) is what you’re looking for.
+
+***
+
+
+
+
 [![Coveralls – test coverage
 ](https://img.shields.io/coveralls/tomekwi/node-raw.svg?style=flat-square)
 ](https://coveralls.io/r/tomekwi/node-raw)
@@ -10,15 +18,6 @@
  [![Code style: airbnb
 ](https://img.shields.io/badge/code%20style-airbnb-blue.svg?style=flat-square)
 ](https://github.com/airbnb/javascript)
-
-
-
-
-***
-
-**⚠ Heads up!** This module has been renamed. [isomorphic-raw](../isomorphic-raw) is what you’re looking for.
-
-***
 
 
 
