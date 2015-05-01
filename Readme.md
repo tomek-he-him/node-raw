@@ -14,6 +14,15 @@
 
 
 
+***
+
+**⚠ Heads up!** This module has been renamed. [isomorphic-raw](../isomorphic-raw) is what you’re looking for.
+
+***
+
+
+
+
 node-raw
 ========
 
