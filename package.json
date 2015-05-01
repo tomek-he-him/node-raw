@@ -1,5 +1,5 @@
 { "name": "node-raw"
-, "version": "0.2.1"
+, "version": "0.2.2"
 , "description": "Make webpack’s raw-loader work in node and iojs."
 
 , "dependencies":
