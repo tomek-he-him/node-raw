@@ -1,5 +1,5 @@
 
-**⚠ Heads up!** This module has been deprecated. Have a look at  [isomorphic-ensure](../isomorphic-ensure) and use *[raw-loader][]* directly.
+**⚠ Heads up!** This module has been deprecated. Have a look at *[isomorphic-ensure](../isomorphic-ensure)* and use *[raw-loader][]* directly.
 
 ***
 
