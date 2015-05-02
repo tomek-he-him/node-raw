@@ -1,5 +1,5 @@
 
-**⚠ Heads up!** This module has been renamed. [isomorphic-raw](../isomorphic-raw) is what you’re looking for.
+**⚠ Heads up!** This module has been deprecated. Have a look at  [isomorphic-ensure](../isomorphic-ensure) and use *[raw-loader][]* directly.
 
 ***
 
